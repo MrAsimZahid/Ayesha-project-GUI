@@ -12,7 +12,7 @@ import java.util.Queue;
  *
  * @author asimz
  */
-public abstract class FCFS extends ScheduleBase {
+public class FCFS extends ScheduleBase {
     
     /**
      *

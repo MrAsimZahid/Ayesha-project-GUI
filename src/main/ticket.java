@@ -16,6 +16,8 @@ public class ticket extends javax.swing.JFrame {
      */
     public ticket() {
         initComponents();
+        
+        
     }
 
     /**
@@ -41,6 +43,15 @@ public class ticket extends javax.swing.JFrame {
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
+        jTextArea1.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                jTextArea1AncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
         jScrollPane1.setViewportView(jTextArea1);
 
         jLabel2.setText("Current serving is");
@@ -106,6 +117,12 @@ public class ticket extends javax.swing.JFrame {
         obj.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextArea1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTextArea1AncestorAdded
+        // TODO add your handling code here:
+        FCFS fcfs = new FCFS();
+        fcfs.schedule();
+    }//GEN-LAST:event_jTextArea1AncestorAdded
 
     /**
      * @param args the command line arguments
